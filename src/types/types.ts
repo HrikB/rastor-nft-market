@@ -9,4 +9,5 @@ export type Item = {
   name: string;
   description: string;
   nftContract: string;
+  sold: boolean;
 };
