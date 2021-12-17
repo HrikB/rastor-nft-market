@@ -78,17 +78,18 @@ function CreatorDashboard() {
           <div>
             <h2 className="text-2x py-2">Items Sold</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-              {sold.map((nft) => {
+              {sold.map((nft) => (
                 <div
-                  key={`${nft.nftContract}/${nft.tokenId}`}
+                  key={`17`}
                   className="border shadow rounded-xl overflow-hidden"
                 >
+                  {console.log("f", nft)}
                   <img src={nft.image} className="rounded" />
                   <div className="p-4 bg-black">
                     <p className="text-2xl font-bold text-white">{`Price - ${nft.price} ETH`}</p>
                   </div>
-                </div>;
-              })}
+                </div>
+              ))}
             </div>
           </div>
         )}

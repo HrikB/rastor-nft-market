@@ -49,6 +49,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deployDev": "npx hardhat run scripts/deploy.ts --network localhost",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
