@@ -38,19 +38,18 @@ describe("NFTMarket", () => {
     await nft.createToken("http://mytokenlocation.com");
     await nft.createToken("http://mytokenlocation2.com");
 
-    await market.createMarketItem(nftContrAddr, 1, auctionPrice, {
-      value: listingPrice,
-    });
-    await market.createMarketItem(nftContrAddr, 2, auctionPrice, {
-      value: listingPrice,
-    });
+    // await market.createMarketItem(nftContrAddr, 1, auctionPrice, {
+    //   value: listingPrice,
+    // });
+    // await market.createMarketItem(nftContrAddr, 2, auctionPrice, {
+    //   value: listingPrice,
+    // });
 
     const [_, buyerAddress] = await ethers.getSigners();
 
-    console.log(listingPrice);
-    await market
-      .connect(buyerAddress)
-      .createMarketSale(nftContrAddr, 1, { value: auctionPrice });
+    // await market
+    //   .connect(buyerAddress)
+    //   .createMarketSale(nftContrAddr, 1, { value: auctionPrice });
 
     let items = await market.getMarketItems();
 

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.4;
 
-import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
-import "../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "hardhat/console.sol";
 
 contract NFTMarket is ReentrancyGuard {
@@ -104,10 +104,12 @@ contract NFTMarket is ReentrancyGuard {
     }
 
     function getMarketItems() public view returns (MarketItem[] memory) {
+        console.log("running");
         uint256 itemCount = _itemIds.current();
         uint256 unsoldItemCount = itemCount - _itemsSold.current();
         uint256 currIndex = 0;
 
+        console.log(itemCount, unsoldItemCount, currIndex);
         MarketItem[] memory items = new MarketItem[](unsoldItemCount);
         for (uint256 i = 0; i < itemCount; i++) {
             if (idToMarketItem[i + 1].owner == address(0)) {
