@@ -2,20 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import Web3Modal from "web3modal";
+import { Item } from "../types/types";
 
 import NFT from "../NFT.json";
 import NFTMarket from "../NFTMarket.json";
 import { nftAddr, nftMarketAddr } from "../config";
-
-type Item = {
-  price: number;
-  tokenId: string;
-  seller: string;
-  owner: string;
-  image: string;
-  name: string;
-  description: string;
-};
 
 function Home() {
   const [nfts, setNfts] = useState<Item[]>([]);
@@ -35,9 +26,7 @@ function Home() {
       NFTMarket.abi,
       provider
     );
-    console.log(marketContr, provider);
     const data = await marketContr.getMarketItems();
-
     const items: Item[] = await Promise.all(
       data.map(async (i: Item) => {
         const tokenUri = await tokenContr.tokenURI(i.tokenId);

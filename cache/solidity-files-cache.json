@@ -442,8 +442,8 @@
       ]
     },
     "/home/EthProjects/rastor-nft-market/contracts/NFTMarket.sol": {
-      "lastModificationDate": 1639699709369,
-      "contentHash": "73624ffcc060cdbbc01b430e184945ca",
+      "lastModificationDate": 1639714407171,
+      "contentHash": "31c832bdc4d46f58ea91f7a0add5afc0",
       "sourceName": "contracts/NFTMarket.sol",
       "solcConfig": {
         "version": "0.8.4",
